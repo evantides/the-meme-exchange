@@ -4,7 +4,7 @@ class Default extends React.Component {
     return (
       <html>
         <head>
-          <link rel={"stylesheet"} href={"/css/show.css"} />
+          <link rel={"stylesheet"} href={"/css/style.css"} />
           <title>The Meme Exchange</title>
         </head>
         <body>
