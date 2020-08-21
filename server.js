@@ -20,7 +20,9 @@ const PORT = process.env.PORT || 3000;
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Connect to Mongo
-db.on("open", () => {});
+db.on("open", () => {
+  console.log("connected to mongo");
+});
 
 /* MiddleWare!!! */
 //set public as the root folder (and as static) woo!!!
@@ -39,16 +41,16 @@ app.use(methodOverride("_method"));
 /*  STATIC ROUTES  */
 // Home page: static
 app.get("/", (req, res) => {
-  res.render("static/Home");
+  res.render("./static/Home");
 });
 
 //About Page: static
 app.get("/about", (req, res) => {
-  res.render("static/About");
+  res.render("./static/About");
 });
 
 /*  NONSTATIC ROUTS  */
-app.use("/memes", require("./controllers/memes.js"));
+app.use("/memes", require("./controllers/memes"));
 
 //finally, the listener
 app.listen(PORT, () => {

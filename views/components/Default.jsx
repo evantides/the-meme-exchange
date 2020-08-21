@@ -1,4 +1,11 @@
 const React = require("react"); //uses React
+
+/*
+~~~~~~~~~~~
+Created this so I can have the same look to each webpage...
+Definitely makes the code DRY-er!
+~~~~~~~~~~~
+*/
 class Default extends React.Component {
   render() {
     return (
@@ -10,11 +17,12 @@ class Default extends React.Component {
         <body>
           <h1>The Meme Exchange</h1>
           <nav>
-            <a href="/">Home</a>
+            <a href="/">Home</a> <br />
+            <a href={"/memes"}>Enter the Meme Zone</a>
           </nav>
           {this.props.children}
           <footer>
-            <a href={"/"}>About this Site!</a>
+            <a href={"/about"}>About this Site!</a>
           </footer>
         </body>
       </html>
