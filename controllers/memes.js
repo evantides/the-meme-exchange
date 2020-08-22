@@ -3,6 +3,7 @@ const router = express.Router();
 const Meme = require("../models/memes");
 const Seed = require("./seed");
 const dailyRun = require("../controllers/daily");
+const nodeyourmeme = require("nodeyourmeme");
 
 /*
 ~~~~~~~~~~~
@@ -30,6 +31,19 @@ router.get("/seed", (req, res) => {
 //Google API
 router.get("/daily", (req, res) => {
   res.send(dailyRun);
+});
+
+// Show a Found Meme
+router.post("/found", (req, res) => {
+  console.log(req.body.q);
+  nodeyourmeme
+    .search(req.body.q)
+    .then((spec) => {
+      res.render("memes/ShowResults", {
+        sentMeme: spec,
+      });
+    })
+    .catch(console.error);
 });
 
 /* INDUCES */
@@ -64,6 +78,11 @@ router.delete("/:id", (req, res) => {
 // UPDATE
 
 // CREATE
+router.post("/", (req, res) => {
+  Meme.create(req.body, (error, createdMeme) => {
+    res.redirect("/memes");
+  });
+});
 
 // EDIT
 
