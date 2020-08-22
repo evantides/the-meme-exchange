@@ -1,4 +1,4 @@
-const React = require("react"); //uses React
+import React from "react"; //uses React
 
 /*
 ~~~~~~~~~~~
@@ -6,6 +6,7 @@ Created this so I can have the same look to each webpage...
 Definitely makes the code DRY-er!
 ~~~~~~~~~~~
 */
+
 class Default extends React.Component {
   render() {
     return (
@@ -23,6 +24,9 @@ class Default extends React.Component {
           {this.props.children}
           <footer>
             <a href={"/about"}>About this Site!</a>
+            <a href={"/logout"}>
+              <p>Logout?</p>
+            </a>
           </footer>
         </body>
       </html>

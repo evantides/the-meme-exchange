@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Meme = require("../models/memes");
 const Seed = require("./seed");
+const dailyRun = require("../controllers/daily");
 
 /*
 ~~~~~~~~~~~
@@ -16,7 +17,6 @@ I also have a seed route that allows me to seed my database with various memes!
 //STUFF GOES HERE
 
 // SEED ROUTE
-
 router.get("/seed", (req, res) => {
   Meme.create(Seed, (err) => {
     if (err) {
@@ -25,6 +25,11 @@ router.get("/seed", (req, res) => {
       res.redirect("/");
     }
   });
+});
+
+//Google API
+router.get("/daily", (req, res) => {
+  res.send(dailyRun);
 });
 
 /* INDUCES */
@@ -44,6 +49,17 @@ router.get("/new", (req, res) => {
 });
 
 // DELETE
+router.delete("/:id", (req, res) => {
+  Meme.findById(req.params.id, (err, specific) => {
+    if (specific.pass === req.cookies.userName) {
+      specific.delete();
+      console.log("Deleted?");
+      res.redirect("/memes");
+    } else {
+      console.log("oops");
+    }
+  });
+});
 
 // UPDATE
 

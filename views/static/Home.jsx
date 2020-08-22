@@ -8,11 +8,16 @@ or the meme page from the root directory!! Might use this to
 incorporate authentication...
 ~~~~~~~~~~~
 */
+let userName = "";
 class Home extends React.Component {
   render() {
     return (
       <Default>
         <h3>Welcome to The Meme Exchange</h3>
+        <form action={"/logIn"} method={"post"}>
+          <input type={"text"} name={"userName"} defaultValue={userName} />
+          <input type={"submit"} name="" value={"Submit!"} />
+        </form>
         <p>Put more stuff here, to lead to the right pages!!</p>
       </Default>
     );

@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const app = express();
 const db = mongoose.connection;
+const cookieParser = require("cookie-parser");
 
 //Views
 const reactViews = require("express-react-views"); // V
@@ -25,8 +26,13 @@ db.on("open", () => {
 });
 
 /* MiddleWare!!! */
+
 //set public as the root folder (and as static) woo!!!
 app.use(express.static("public"));
+
+//sets up cookieParser for 'authentication'
+//hint: its not really authentication...
+app.use(cookieParser());
 
 //set the view engines and create engine
 app.set("view engine", "jsx");
@@ -42,6 +48,20 @@ app.use(methodOverride("_method"));
 // Home page: static
 app.get("/", (req, res) => {
   res.render("./static/Home");
+});
+
+// log in info
+app.post("/logIn", (req, res) => {
+  res.cookie("userName", req.body.userName);
+  res.redirect("/memes");
+});
+
+//log out?
+app.get("/logout", (req, res) => {
+  //it will clear the userData cookie
+  res.clearCookie("userName");
+  console.log("user logout successfully");
+  res.redirect("/");
 });
 
 //About Page: static

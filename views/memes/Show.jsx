@@ -18,6 +18,9 @@ class Show extends React.Component {
           <img src={meme.image_url} alt={meme.name} />
           <p>{meme.description}</p>
           <p>Created by: {meme.creator}</p>
+          <form action={`/memes/${meme.id}/?_method=DELETE`} method={"POST"}>
+            <input type={"submit"} value={"Delete This Meme!"} />
+          </form>
         </div>
       </Default>
     );

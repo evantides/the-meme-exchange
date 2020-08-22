@@ -22,10 +22,6 @@ clearer for myself.
 ~~~~~~~~~~~
 */
 
-const pushMe = (obj) => {
-  module.exports = obj;
-};
-
 const main = () => {
   for (let i = 0; i < terms.length; i++) {
     let currObj = {};
@@ -40,7 +36,8 @@ const main = () => {
       })
       .catch(console.error);
   }
-  pushMe(obj); // runs module.exports...
+  console.log("STOP ME");
+  return obj; // runs module.exports...
 };
 
-main(); // runs main
+module.exports = main; // runs main
