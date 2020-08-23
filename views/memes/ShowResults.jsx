@@ -18,12 +18,9 @@ class ShowResults extends React.Component {
                 value={"admin"}
               />{" "}
               <br />
-              Image Url:{" "}
-              <input
-                type={"text"}
-                name={"image_url"}
-                value={stuff.image}
-              />{" "}
+              Image Url:
+              <input type={"text"} name={"image_url"} value={stuff.image} />
+              <img src={stuff.image} />
               <br />
               Description:
               <textarea
@@ -31,10 +28,8 @@ class ShowResults extends React.Component {
                 cols={"40"}
                 name={"description"}
                 value={stuff.about}
-              />{" "}
+              />
               <br />
-              Password (should match username):
-              <input type={"password"} name={"pass"} /> <br />
               <input type={"submit"} name={""} value={"Create Meme"} />
             </form>
           </div>

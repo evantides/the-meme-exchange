@@ -65,7 +65,7 @@ router.get("/new", (req, res) => {
 // DELETE
 router.delete("/:id", (req, res) => {
   Meme.findById(req.params.id, (err, specific) => {
-    if (specific.pass === req.cookies.userName) {
+    if (specific.creator === req.cookies.userName) {
       specific.delete();
       console.log("Deleted?");
       res.redirect("/memes");
@@ -76,6 +76,17 @@ router.delete("/:id", (req, res) => {
 });
 
 // UPDATE
+router.put("/:id", (req, res) => {
+  Meme.findByIdAndUpdate(req.params.id, req.body, (err, foundMeme) => {
+    if (err) {
+      res.status(500).send({
+        error: err.message,
+      });
+    } else {
+      res.redirect("/memes");
+    }
+  });
+});
 
 // CREATE
 router.post("/", (req, res) => {
@@ -85,6 +96,19 @@ router.post("/", (req, res) => {
 });
 
 // EDIT
+router.get("/:id/edit", (req, res) => {
+  Meme.findById(req.params.id, (err, foundMeme) => {
+    if (err) {
+      res.status(500).send({
+        error: err.message,
+      });
+    } else {
+      res.render("memes/Edit", {
+        meme: foundMeme,
+      });
+    }
+  });
+});
 
 // SHOW
 router.get("/:id", (req, res) => {

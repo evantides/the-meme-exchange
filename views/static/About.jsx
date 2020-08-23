@@ -11,10 +11,10 @@ for those who don't visit the Github.
 class About extends React.Component {
   render() {
     return (
-      <Default>
+      <>
         <h3>Welcome to The Meme Exchange About Page!</h3>
         <p>Creator Info and Crapnot</p>
-      </Default>
+      </>
     );
   }
 }

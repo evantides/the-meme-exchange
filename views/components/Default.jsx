@@ -19,7 +19,8 @@ class Default extends React.Component {
           <h1>The Meme Exchange</h1>
           <nav>
             <a href="/">Home</a> <br />
-            <a href={"/memes"}>Enter the Meme Zone</a>
+            <a href={"/memes"}>Go to the Meme Page!</a> <br />
+            <a href={"/memes/new"}>Create a new Meme!</a>
           </nav>
           {this.props.children}
           <footer>

@@ -21,6 +21,7 @@ class Show extends React.Component {
           <form action={`/memes/${meme.id}/?_method=DELETE`} method={"POST"}>
             <input type={"submit"} value={"Delete This Meme!"} />
           </form>
+          <a href={`/memes/${meme.id}/edit`}>Edit this meme</a>
         </div>
       </Default>
     );

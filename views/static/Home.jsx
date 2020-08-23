@@ -12,14 +12,19 @@ let userName = "";
 class Home extends React.Component {
   render() {
     return (
-      <Default>
-        <h3>Welcome to The Meme Exchange</h3>
+      <>
+        <h1>Welcome to The Meme Exchange</h1>
+        <p>To enter the meme zone, please log in!</p>
+        <p>
+          Your username doubles as your password because authentication is
+          difficult!
+        </p>
         <form action={"/logIn"} method={"post"}>
           <input type={"text"} name={"userName"} defaultValue={userName} />
           <input type={"submit"} name="" value={"Submit!"} />
         </form>
         <p>Put more stuff here, to lead to the right pages!!</p>
-      </Default>
+      </>
     );
   }
 }
