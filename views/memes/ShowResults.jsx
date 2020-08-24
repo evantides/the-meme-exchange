@@ -30,6 +30,12 @@ class ShowResults extends React.Component {
                 value={stuff.about}
               />
               <br />
+              Password:{" "}
+              <input
+                type={"password"}
+                name={"pass"}
+                defaultValue={"onlyICanDoThis"}
+              />
               <input type={"submit"} name={""} value={"Create Meme"} />
             </form>
           </div>

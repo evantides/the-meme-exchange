@@ -6,7 +6,6 @@ const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const app = express();
 const db = mongoose.connection;
-const cookieParser = require("cookie-parser");
 
 //Views
 const reactViews = require("express-react-views"); // V
@@ -30,10 +29,6 @@ db.on("open", () => {
 //set public as the root folder (and as static) woo!!!
 app.use(express.static("public"));
 
-//sets up cookieParser for 'authentication'
-//hint: its not really authentication...
-app.use(cookieParser());
-
 //set the view engines and create engine
 app.set("view engine", "jsx");
 app.engine("jsx", createEngine());
@@ -45,24 +40,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
 /*  STATIC ROUTES  */
-// Home page: static
-app.get("/", (req, res) => {
-  res.render("./static/Home");
-});
-
-// log in info
-app.post("/logIn", (req, res) => {
-  res.cookie("userName", req.body.userName);
-  res.redirect("/memes");
-});
-
-//log out?
-app.get("/logout", (req, res) => {
-  //it will clear the userData cookie
-  res.clearCookie("userName");
-  console.log("user logout successfully");
-  res.redirect("/");
-});
 
 //About Page: static
 app.get("/about", (req, res) => {
@@ -71,6 +48,7 @@ app.get("/about", (req, res) => {
 
 /*  NONSTATIC ROUTS  */
 app.use("/memes", require("./controllers/memes"));
+app.use("/", require("./controllers/users"));
 
 //finally, the listener
 app.listen(PORT, () => {

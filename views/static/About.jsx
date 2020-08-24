@@ -1,5 +1,4 @@
 const React = require("react"); //uses React
-const Default = require("../components/Default.jsx");
 
 /*
 ~~~~~~~~~~~
