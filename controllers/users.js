@@ -70,7 +70,9 @@ router.patch("/users/:thisUserId/:memeId", (req, res) => {
       { _id: req.params.memeId },
       { $inc: { percentAvail: +10 } },
       (err, result) => {
-        res.redirect("/memes");
+        if (err) {
+          console.log(err.message);
+        }
       }
     );
     Users.findOne({ _id: req.params.thisUserId }, (err, foundUser) => {
@@ -79,7 +81,6 @@ router.patch("/users/:thisUserId/:memeId", (req, res) => {
         if (copyOfMemes[i].memeName._id.equals(foundMeme._id)) {
           console.log("See?");
           copyOfMemes[i].owned -= 10;
-          let newCopy;
           if (copyOfMemes[i].owned <= 0) {
             copyOfMemes.splice(i, 1);
             console.log("but...", copyOfMemes);
@@ -93,10 +94,12 @@ router.patch("/users/:thisUserId/:memeId", (req, res) => {
             (err) => {
               if (err) {
                 console.log(err.message);
+                res.redirect("/memes");
+              } else {
+                res.redirect("/memes");
               }
             }
           );
-          res.redirect("/memes");
         }
       }
     });

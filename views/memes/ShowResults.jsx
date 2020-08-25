@@ -6,7 +6,7 @@ class ShowResults extends React.Component {
     const stuff = this.props.sentMeme;
     return (
       <Default>
-        <div id={"formThing"}>
+        <div className={"main"}>
           <h1>Found a Meme!</h1>
           <div id={"invisible"}>
             <form action="/memes" method="POST">

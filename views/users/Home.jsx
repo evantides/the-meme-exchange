@@ -1,5 +1,5 @@
 const React = require("react"); //uses React
-
+const Notloggedin = require("../components/NotLoggedIn");
 /*
 ~~~~~~~~~~~
 Static Home page so the user can navigate to the About page,
@@ -15,17 +15,16 @@ let userName = "";
 class Home extends React.Component {
   render() {
     return (
-      <>
-        <h1>Welcome to The Meme Exchange</h1>
-        <p>To enter the meme zone, please log in!</p>
-        <form action={"/logIn"} method={"post"}>
-          UserName:{" "}
+      <Notloggedin>
+        <form id={"logIn"} action={"/logIn"} method={"post"}>
+          <label>UserName:</label>{" "}
           <input type={"text"} name={"userName"} defaultValue={userName} />{" "}
           <br />
-          Password : <input type={"password"} name={"pass"} /> <br />
+          <label>Password :</label> <input type={"password"} name={"pass"} />{" "}
+          <br />
           <input type={"submit"} name="" value={"Submit!"} />
         </form>
-      </>
+      </Notloggedin>
     );
   }
 }

@@ -7,7 +7,7 @@ Definitely makes the code DRY-er!
 ~~~~~~~~~~~
 */
 
-class Default extends React.Component {
+class NotLoggedIn extends React.Component {
   render() {
     return (
       <html>
@@ -17,32 +17,25 @@ class Default extends React.Component {
             href="https://fonts.googleapis.com/css2?family=Arvo&family=Cousine&display=swap"
             rel="stylesheet"
           />
-          <title>The Meme Exchange</title>ç{" "}
+          <title>The Meme Exchange</title>
         </head>
         <body>
           <header>
-            <h1>You have entered... The Meme Exchange</h1>
+            <h1>Welcome to The Meme Exchange</h1>
           </header>
           <nav>
-            <a id={"new"} href={"/memes/new"}>
-              Create a new Meme
+            <a id="memezone" href="/">
+              Log in here
             </a>
-            <a id={"memes"} href={"/memes"}>
-              (Re)Enter the Meme Zone
-            </a>
-            <a id={"about"} href={"/about"}>
-              How-To Guide
-            </a>
-            <a id={"logout"} href="/logout">
-              LogOut
+            <a id="about" href={"/about"}>
+              Confused? Click Me!
             </a>
           </nav>
-
           {this.props.children}
           <footer>
             <p>
               <small>
-                Disclaimer: None of this is real. Not even this computer. Please
+                Disclaimer: None of this is real. Not even the Matrix. Please
                 remember that tokens aren't actual money. And I am not actually
                 a duck. I promise!!!
               </small>
@@ -54,4 +47,4 @@ class Default extends React.Component {
   }
 }
 
-module.exports = Default;
+module.exports = NotLoggedIn;

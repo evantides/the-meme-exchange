@@ -5,7 +5,7 @@ class New extends React.Component {
   render() {
     return (
       <Default>
-        <div id={"formThing"}>
+        <div className={"main"}>
           <h1>Find a Meme!</h1>
           <form action={"/memes/found"} method={"POST"}>
             searchTerm: <input type="search" name="q" /> <br />
