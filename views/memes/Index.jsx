@@ -12,7 +12,7 @@ class Index extends React.Component {
     const { memes } = this.props;
     return (
       <Default>
-        <div className={"main"}>
+        <div className={"mainIndex"}>
           <h3 id={"loggedIn"}>
             <a href={`users/${this.props.users}`}>
               {this.props.users ? this.props.users : "Guest"} is currently

@@ -17,7 +17,7 @@ class Default extends React.Component {
             href="https://fonts.googleapis.com/css2?family=Arvo&family=Cousine&display=swap"
             rel="stylesheet"
           />
-          <title>The Meme Exchange</title>ç{" "}
+          <title>The Meme Exchange</title>{" "}
         </head>
         <body>
           <header>
@@ -37,14 +37,14 @@ class Default extends React.Component {
               LogOut
             </a>
           </nav>
-
           {this.props.children}
           <footer>
             <p>
               <small>
                 Disclaimer: None of this is real. Not even this computer. Please
-                remember that tokens aren't actual money. And I am not actually
-                a duck. I promise!!!
+                remember that tokens aren't actual money. Please, do not use
+                personal, secret passwords on the site. I am not actually a
+                duck. I promise!!!
               </small>
             </p>
           </footer>

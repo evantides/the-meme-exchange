@@ -7,8 +7,14 @@ class New extends React.Component {
       <Default>
         <div className={"main"}>
           <h1>Find a Meme!</h1>
-          <form action={"/memes/found"} method={"POST"}>
-            searchTerm: <input type="search" name="q" /> <br />
+          <form
+            action={"/memes/found"}
+            id={"logIn"}
+            className={"formThing"}
+            method={"POST"}
+          >
+            <label className={"search"}> searchTerm:</label>{" "}
+            <input className={"search"} type="search" name="q" /> <br />
             <input type={"submit"} name={""} />
           </form>
         </div>

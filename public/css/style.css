@@ -63,13 +63,18 @@ a:hover {
     align-self: center;
 }
 
-.main {
+.main, .mainIndex {
     max-width: 1090px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     font-family: 'Arvo', serif;
     padding-bottom: 100px;
+}
+
+.mainIndex {
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .description > h3 {
@@ -128,6 +133,53 @@ a:hover {
     grid-row-end: 4;
 }
 
+/* Form Stuff */
+
+.formThing > .search {
+    grid-row-start: 2;
+}
+
+.formThing {
+    background: lightslategrey;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    font-family: 'Arvo', serif;
+}
+
+.formThing > label{
+    align-self: center;
+    color: ghostwhite;
+    grid-column-start: 1
+}
+
+.formThing > input {
+    color: ghostwhite;
+    background-color: #010f2b;
+    outline: none;
+
+    font-family: 'Cousine', monospace;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.main > .sourceImage {
+    width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+.formThing > .submit {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
 /* SHOW PAGE STYLING (For specific stuff) */
 
 .showMeme > img {
@@ -164,6 +216,10 @@ a:hover {
 
 .buttons > a {
     padding: 10px;
+    background: var(--backgrounds2);
+}
+.buttons > form > input {
+    background: none;
 }
 
 .buttons > form > input, .buttons > a {
@@ -171,7 +227,6 @@ a:hover {
     text-align: center;
     width: 245px;
     border-radius: 5px;
-    background: var(--backgrounds2);
     align-self: center;
     justify-self: center;
     font-family: 'Arvo', serif;
@@ -180,7 +235,17 @@ a:hover {
 
 }
 
-.buttons > form > input:hover, .buttons > a:hover {
+.buttons > form:hover {
+    color: var(--backgrounds);
+}
+
+.buttons > form > input:hover {
+    color: var(--backgrounds);
+    background: var(--textone);
+    cursor: pointer;
+}
+
+.buttons > a:hover, .buttons > form:hover {
     background: var(--textone);
     color: var(--backgrounds);
     cursor: pointer;
@@ -197,10 +262,11 @@ a:hover {
     list-style-type: none;
     padding-left: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    grid-row-gap: 20px;
     justify-items: center;
     align-items: center;
-    grid-gap: 10px;
+    grid-gap: 20px;
     grid-template-rows: auto;
 }
 
@@ -248,6 +314,10 @@ a:hover {
     }
     .main {
         width: 500px;
+    }
+
+    .memeList {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 

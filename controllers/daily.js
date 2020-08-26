@@ -46,7 +46,7 @@ const find = async () => {
 
 /*
 runMe is an asynchronous function.
-...
+Runs through the parsed data and checks to see if the sum of the data matches any of the 'if' statements.
 */
 
 const runMe = async (result) => {
