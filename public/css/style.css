@@ -315,7 +315,6 @@ a:hover {
     .main {
         width: 500px;
     }
-
     .memeList {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -329,8 +328,14 @@ and (min-device-width: 414px)
 and (max-device-width: 736px)
 and (-webkit-min-device-pixel-ratio: 3) {
     body {
+        font-family: 'Arvo', serif;
         zoom: 180%;
     }
+    header {
+        max-width: 100%;
+    }
+    .main{ padding-bottom: 250px;}
+    small { font-size: 30px;}
 }
 
 /* Portrait and Landscape */
@@ -339,8 +344,14 @@ and (min-device-width: 375px)
 and (max-device-width: 812px)
 and (-webkit-min-device-pixel-ratio: 3) {
     body {
+        font-family: 'Arvo', serif;
         zoom: 180%;
     }
+    small { font-size: 30px;}
+    header {
+        max-width:  100%;
+    }
+    .main{ padding-bottom: 250px;}
 }
 
 @media only screen
@@ -348,8 +359,14 @@ and (min-device-width: 375px)
 and (max-device-width: 667px)
 and (-webkit-min-device-pixel-ratio: 2) {
     body {
+        font-family: 'Arvo', serif;
         zoom: 180%;
     }
+    small { font-size: 30px;}
+    header {
+        max-width:  100%;
+    }
+    .main{ padding-bottom: 250px;}
 }
 
 @media only screen
@@ -357,8 +374,14 @@ and (min-device-width: 320px)
 and (max-device-width: 568px)
 and (-webkit-min-device-pixel-ratio: 2) {
     body {
+        font-family: 'Arvo', serif;
         zoom: 180%;
     }
+    header {
+        max-width:  100%;
+    }
+    small { font-size: 30px;}
+    .main{ padding-bottom: 250px;}
 }
 
 @media only screen
@@ -368,4 +391,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
     body {
         zoom: 180%;
     }
+    small { font-size: 30px;}
+    header {
+        max-width:  100%;
+    }
+    .main{ padding-bottom: 250px;}
 }
