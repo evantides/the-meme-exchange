@@ -328,7 +328,9 @@ a:hover {
 and (min-device-width: 414px)
 and (max-device-width: 736px)
 and (-webkit-min-device-pixel-ratio: 3) {
-
+    body {
+        zoom: 180%;
+    }
 }
 
 /* Portrait and Landscape */
@@ -336,26 +338,34 @@ and (-webkit-min-device-pixel-ratio: 3) {
 and (min-device-width: 375px)
 and (max-device-width: 812px)
 and (-webkit-min-device-pixel-ratio: 3) {
-
+    body {
+        zoom: 180%;
+    }
 }
 
 @media only screen
 and (min-device-width: 375px)
 and (max-device-width: 667px)
 and (-webkit-min-device-pixel-ratio: 2) {
-
+    body {
+        zoom: 180%;
+    }
 }
 
 @media only screen
 and (min-device-width: 320px)
 and (max-device-width: 568px)
 and (-webkit-min-device-pixel-ratio: 2) {
-
+    body {
+        zoom: 180%;
+    }
 }
 
 @media only screen
 and (min-device-width: 320px)
 and (max-device-width: 480px)
 and (-webkit-min-device-pixel-ratio: 2) {
-
+    body {
+        zoom: 180%;
+    }
 }
